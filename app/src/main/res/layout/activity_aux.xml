@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_pick_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:onClick="pickContactNumber"
+        android:text="@string/pick_contact" />
+
+    <ImageButton
+        android:id="@+id/btnCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="callOpenCamera"
+        android:src="@drawable/ic_button_photo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/list_title"
+        android:id="@+id/text_list"
+        android:layout_below="@+id/btn_pick_contact"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_add_item"
+        android:id="@+id/btn_list_add"
+        android:layout_below="@id/text_list"
+        android:layout_alignParentLeft="true"
+        android:onClick="callAddItemToListView"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_gravity="bottom|left|right"
+        android:layout_below="@id/btn_list_add"
+        android:clickable="true"
+        android:smoothScrollbar="true"/>
+
+
+</RelativeLayout>

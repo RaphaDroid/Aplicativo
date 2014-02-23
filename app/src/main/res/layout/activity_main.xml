@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+
+    
+    <Button
+        android:id="@+id/btn_ntf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="createNotification"
+        android:text="@string/ntf_text" />
+
+    <Button
+        android:id="@+id/btn_aux_act"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="@string/auxiliar_activity"
+        android:onClick="openAuxActivity" />
+
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lucky_btn"
+        android:layout_below="@+id/btn_ntf"
+        android:onClick="search"
+        android:text="@string/google_btn_text" />
+
+    <Button
+        android:id="@+id/lucky_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnFileManipulation"
+        android:layout_below="@+id/btn_google"
+        android:layout_marginTop="16dp"
+        android:onClick="openDoodles"
+        android:text="@string/lucky_btn" />
+
+	<TextView
+		android:id="@+id/text_link"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/app_name"
+		android:textSize="30dp"
+		android:layout_below="@+id/lucky_btn"
+		android:layout_marginTop="10dp"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentStart="true"/>
+
+	<Button
+		android:id="@+id/btn_reboot"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_below="@id/text_link"
+		android:layout_marginTop="5dp"
+		android:onClick="promptReboot"
+		android:text="@string/reboot_phone"/>
+
+    <Button
+        android:id="@+id/btnFileManipulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_aux_act"
+        android:layout_alignLeft="@+id/btn_aux_act"
+        android:layout_marginBottom="13dp"
+        android:onClick="openFileManipulation"
+        android:text="@string/title_activity_file" />
+
+</RelativeLayout>

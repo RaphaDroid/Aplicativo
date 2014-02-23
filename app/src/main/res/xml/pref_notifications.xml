@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<PreferenceCategory android:title="@string/pref_header_notifications">
+		<CheckBoxPreference
+			android:key="pref_use_led"
+			android:title="@string/pref_use_led_title"
+		    android:summaryOn="@string/pref_use_led_summary_true"
+		    android:summaryOff="@string/pref_use_led_summary_false"
+		    android:defaultValue="false"/>
+
+		<ListPreference
+			android:key="pref_led_color"
+			android:title="@string/pref_notif_led_color"
+		    android:dependency="pref_use_led"
+		    android:entries="@array/notif_led_color_name"
+		    android:entryValues="@array/notif_led_color_values"
+			android:defaultValue="-1"/>
+
+		<CheckBoxPreference
+			android:key="pref_vibrate"
+		    android:title="@string/pref_vibrate_title"
+		    android:summaryOn="@string/pref_vibrate_summary_true"
+		    android:summaryOff="@string/pref_vibrate_summary_false"
+		    android:defaultValue="false"/>
+
+		<com.example.aplicativo.components.SeekBarPreference
+			android:key="pref_vibration_duration"
+			android:dependency="pref_vibrate"
+			android:title="@string/pref_vibration_duration_title"
+			android:summary="@string/pref_vibration_duration_summary"
+			minimum="1"
+			maximum="2000"
+			interval="10"
+			monitorBoxEnabled="true"
+			monitorBoxUnit="ms"
+			android:defaultValue="1000"
+			android:order="6"/>
+
+	</PreferenceCategory>
+
+</PreferenceScreen>

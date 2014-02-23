@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_header_general">
+		<CheckBoxPreference
+	        android:defaultValue="false"
+	        android:key="reboot_download_checkbox"
+	        android:summary="@string/reboot_download_chbx_summary"
+	        android:title="@string/reboot_download_chbx_title" />
+
+	    <CheckBoxPreference
+	        android:defaultValue="true"
+	        android:key="chk_use_link"
+	        android:title="@string/chk_link_title"/>
+
+	    <EditTextPreference
+	        android:dependency="chk_use_link"
+	        android:key="link"
+	        android:defaultValue="www.google.com.br"
+	        android:title="@string/text_link_title"/>
+
+	    <Preference
+	        android:title="@string/pref_title_open_google" >
+	        <intent android:action="android.intent.action.VIEW"
+	                android:data="https://www.google.com.br" />
+	    </Preference>
+
+	    <ListPreference
+	        android:key="app_font"
+	        android:defaultValue="1"
+	        android:title="@string/app_font"
+	        android:entries="@array/font_types_name"
+	        android:entryValues="@array/font_type_values"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

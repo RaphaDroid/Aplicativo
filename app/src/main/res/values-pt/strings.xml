@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Strings de uso geral -->
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancelar</string>
+    <string name="sure">Tem certeza?</string>
+    <string name="error">Erro!</string>
+    <string name="success">Sucesso!</string>
+    <string name="success_long">Operação realizada com sucesso!</string>
+    <string name="path">Caminho</string>
+    <string name="search">Pesquisar</string>
+    <string name="add">Adicionar</string>
+	<string name="edit">Editar</string>
+	<string name="options">Opções</string>
+	<string name="confirm">Confirmar</string>
+    
+    <!-- MainActivity -->
+    <string name="app_name">Teste</string>
+    <string name="title_activity_main">Main Activity</string>
+    <string name="action_settings">Configurações</string>
+    <string name="action_refresh">Recarregar</string>
+    <string name="ntf_text">Criar notificação</string>
+    <string name="title_activity_test">Notificações</string>
+    <string name="google_btn_text">Pesquisa Google</string>
+    <string name="lucky_btn">Estou com sorte!</string>
+    <string name="auxiliar_activity">Abrir Activity auxiliar</string>
+	<string name="notif_title">Título da notificação</string>
+	<string name="notif_text">Texto da notificação</string>
+	<string name="notification">Notificação</string>
+	<string name="notif_test">Notificação de teste</string>
+    
+    <!-- AuxiliarActivity -->
+    <string name="title_activity_aux">Activity auxiliar</string>
+    <string name="pick_contact">Selecionar contato</string>
+    <string name="contact_phone">Telefone:</string>
+    <string name="share_text">Compartilhar texto</string>
+    <string name="shared_text">Texto compartilhado</string>
+	<string name="share">Compartilhar</string>
+    <string name="reboot_phone">Reiniciar telefone</string>
+    <string name="prompt_reboot_phone">Você deseja reiniciar seu telefone?</string>
+    <string name="item_reboot_system">Reiniciar sistema</string>
+    <string name="item_reboot_recovery">Modo recuperação</string>
+    <string name="item_reboot_bootloader">Modo bootloader</string>
+    <string name="item_hot_reboot">Reinício rápido</string>
+    <string name="item_reboot_download">Modo download</string>
+    <string name="list_add_item">Adicionar item</string>
+    <string name="list_remove_item">Remover item</string>
+	<string name="list_item_edit">Editar item</string>
+    <string name="list_title">Opções do ListView</string>
+    <string name="sure_remove_item">Tem certeza de que deseja excluir este item?</string>
+	<string name="item_name">Nome do item</string>
+    <string name="item_description">Descrição do item</string>
+	<string name="item_id">ID</string>
+	<string name="item_index">Índice</string>
+    
+   	<!-- TestActivity -->
+    <string name="ntf_working">Notificações funcionando!</string>
+    
+    <!-- FileActivity -->
+    <string name="title_activity_file">Manipulação de arquivos</string>
+    <string name="file_name_hint">Nome do arquivo</string>
+    <string name="file_content_hint">Conteúdo do arquivo</string>
+    <string name="btn_save_file_text">Salvar</string>
+    <string name="btn_clear_fields_text">Limpar</string>
+    <string name="files">Arquivos</string>
+    <string name="choose_created_file">Escolher arquivo existente</string>
+    <string name="file_successfully_created">Arquivo criado</string>
+    <string name="file_error_empty_fields">Há campos vazios!</string>
+
+    
+    
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Configurações</string>
+
+    <!-- General settings -->
+    <string name="pref_header_general">Geral</string>
+
+    <string name="reboot_download_chbx_summary">Se habilitado, \'Modo download\' será usado em vez de \'Modo bootloader\' nas opções de reinício</string>
+    <string name="reboot_download_chbx_title">Usar \'Modo download\'</string>
+    
+    <string name="chk_link_title">Usar link abaixo</string>
+    <string name="text_link_title">Link</string>
+
+    <string name="pref_title_open_google">Abrir Google</string>
+    
+    <string name="app_font">Fonte da aplicação</string>
+
+	<!-- Notifications settings -->
+	<string name="pref_header_notifications">Notificações</string>
+
+	<string name="pref_use_led_title">Usar LED</string>
+	<string name="pref_use_led_summary_true">Luz de notificações ATIVADA</string>
+	<string name="pref_use_led_summary_false">Luz de notificações DESATIVADA</string>
+
+	<string name="pref_notif_led_color">Cor do LED</string>
+
+	<string-array name="notif_led_color_name">
+		<item>Verde</item>
+		<item>Azul</item>
+		<item>Vermelho</item>
+		<item>Amarelo</item>
+		<item>Branco</item>
+	</string-array>
+
+	<string name="pref_vibrate_title">Vibrar</string>
+	<string name="pref_vibrate_summary_true">Vibração ATIVADA</string>
+	<string name="pref_vibrate_summary_false">Vibração DESATIVADA</string>
+
+	<string name="pref_vibration_duration_title">Duração da vibração</string>
+	<string name="pref_vibration_duration_summary">Define o tempo em que o dispositivo vibrará</string>
+</resources>
