@@ -38,9 +38,9 @@ public class MainActivity extends Activity {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
 		//Link
-		boolean useLink = prefs.getBoolean(SettingsActivity.CHK_USE_LINK, false);
+		boolean useLink = prefs.getBoolean(MainSettingsActivity.CHK_USE_LINK, false);
 
-		String link = LinkManager.fixLink(prefs.getString(SettingsActivity.LINK, "www.google.com.br"));
+		String link = LinkManager.fixLink(prefs.getString(MainSettingsActivity.LINK, "www.google.com.br"));
 		TextView textLink = (TextView)findViewById(R.id.text_link);
 
 		if(useLink){
@@ -50,75 +50,62 @@ public class MainActivity extends Activity {
 			textLink.setText(LinkManager.extractSiteName(link));
 
         //Fonte
-		int fontType = Integer.parseInt(prefs.getString(SettingsActivity.LIST_APP_FONT, "1"));
+		int fontType = Integer.parseInt(prefs.getString(MainSettingsActivity.LIST_APP_FONT, "1"));
 
 		switch(fontType){
-		case SettingsActivity.CHARLEE_DOODLES:
+		case MainSettingsActivity.CHARLEE_DOODLES:
 		    break;
 
-        case SettingsActivity.ROBOTO_REGULAR:
+        case MainSettingsActivity.ROBOTO_REGULAR:
             break;
 
-        case SettingsActivity.ROBOTO_ITALIC:
+        case MainSettingsActivity.ROBOTO_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_BLACK:
+        case MainSettingsActivity.ROBOTO_BLACK:
             break;
 
-        case SettingsActivity.ROBOTO_BLACK_ITALIC:
+        case MainSettingsActivity.ROBOTO_BLACK_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_BOLD:
+        case MainSettingsActivity.ROBOTO_BOLD:
             break;
 
-        case SettingsActivity.ROBOTO_BOLD_ITALIC:
+        case MainSettingsActivity.ROBOTO_BOLD_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_CONDENSED:
+        case MainSettingsActivity.ROBOTO_CONDENSED:
             break;
 
-        case SettingsActivity.ROBOTO_CONDENSED_ITALIC:
+        case MainSettingsActivity.ROBOTO_CONDENSED_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_BOLD_CONDENSED:
+        case MainSettingsActivity.ROBOTO_BOLD_CONDENSED:
             break;
 
-        case SettingsActivity.ROBOTO_BOLD_CONDENSED_ITALIC:
+        case MainSettingsActivity.ROBOTO_BOLD_CONDENSED_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_LIGHT:
+        case MainSettingsActivity.ROBOTO_LIGHT:
             break;
 
-        case SettingsActivity.ROBOTO_LIGHT_ITALIC:
+        case MainSettingsActivity.ROBOTO_LIGHT_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_MEDIUM:
+        case MainSettingsActivity.ROBOTO_MEDIUM:
             break;
 
-        case SettingsActivity.ROBOTO_MEDIUM_ITALIC:
+        case MainSettingsActivity.ROBOTO_MEDIUM_ITALIC:
             break;
 
-        case SettingsActivity.ROBOTO_THIN:
+        case MainSettingsActivity.ROBOTO_THIN:
             break;
 
-        case SettingsActivity.ROBOTO_THIN_ITALIC:
+        case MainSettingsActivity.ROBOTO_THIN_ITALIC:
             break;
 
         default:
             break;
-		}
-
-		Intent intent = getIntent();
-		String action = intent.getAction();
-		String type = intent.getType();
-
-		if(action.equals(Intent.ACTION_SEND) && type != null){
-			if(type.equals("text/plain")){
-				String sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
-				if(sharedText != null){
-					DialogManager.dialogOk(getString(R.string.shared_text), sharedText, this);
-				}
-			}
 		}
 	}
 
@@ -126,16 +113,13 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.preferences, menu);
-
 		//		MenuItem item = menu.findItem(R.id.menu_item_share);
 		//		mShareActionProvider = (ShareActionProvider)item.getActionProvider();
-
-		return true;
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item){
-
 		switch(item.getItemId()){
 			case R.id.menu_item_share:
 
@@ -148,7 +132,7 @@ public class MainActivity extends Activity {
 				return true;
 
 			case R.id.action_settings:
-				startActivity(new Intent(this, SettingsActivity.class));
+				startActivity(new Intent(this, MainSettingsActivity.class));
 
 			default:
 				return super.onOptionsItemSelected(item);
@@ -177,12 +161,16 @@ public class MainActivity extends Activity {
 		shareLayout.addView(shareText);
 		shareLayout.addView(vSpace2);
 
-		DialogManager.dialogComplex(this, getString(R.string.share_text), shareLayout, new OnClickListener(){
-			@Override
-			public void onClick(DialogInterface dialogInterface, int i){
-				shareText(shareText.getText().toString());
-			}
-		}, null, getString(R.string.share), getString(R.string.cancel));
+		DialogManager.dialogComplex(this, getString(R.string.share_text), shareLayout,
+				new OnClickListener(){
+					@Override
+					public void onClick(DialogInterface dialog, int which){
+						shareText(shareText.getText().toString());
+					}
+				}, new OnClickListener(){
+					@Override
+					public void onClick(DialogInterface dialog, int which){}
+				}, getString(R.string.share), getString(R.string.cancel));
 	}
 
 	private void shareText(String text){
@@ -205,10 +193,10 @@ public class MainActivity extends Activity {
 	public void createNotification(View v){
 
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		boolean useLed = prefs.getBoolean(SettingsActivity.CHK_USE_LED, false);
-		int ledColor = Integer.parseInt(prefs.getString(SettingsActivity.LIST_LED_COLOR, "-1"));
-		boolean vibrate = prefs.getBoolean(SettingsActivity.CHK_VIBRATE, false);
-		int vibrationDuration = prefs.getInt(SettingsActivity.VIBRATION_DURATION, 1000);
+		boolean useLed = prefs.getBoolean(MainSettingsActivity.CHK_USE_LED, false);
+		int ledColor = Integer.parseInt(prefs.getString(MainSettingsActivity.LIST_LED_COLOR, "-1"));
+		boolean vibrate = prefs.getBoolean(MainSettingsActivity.CHK_VIBRATE, false);
+		int vibrationDuration = prefs.getInt(MainSettingsActivity.VIBRATION_DURATION, 1000);
 
 		Notification.Builder ntf =
 				new Notification.Builder(this)
@@ -291,14 +279,14 @@ public class MainActivity extends Activity {
 	public void promptReboot(View v){
 
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		final boolean useDownloadMode = prefs.getBoolean(SettingsActivity.CHK_REBOOT_DOWNLOAD, false);
+		final boolean useDownloadMode = prefs.getBoolean(MainSettingsActivity.CHK_REBOOT_DOWNLOAD, false);
 
 		final String[] rebootOptions = {getString(R.string.item_reboot_system),
 				getString(R.string.item_reboot_recovery),
 				(useDownloadMode) ? getString(R.string.item_reboot_download) : getString(R.string.item_reboot_bootloader),
 				getString(R.string.item_hot_reboot)};
 
-		DialogManager.dialogOptions(this, getString(R.string.reboot_phone), rebootOptions,
+		DialogManager.dialogOptions(this, null, rebootOptions,
 				new OnClickListener() {
 
 					@Override

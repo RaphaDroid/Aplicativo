@@ -24,7 +24,7 @@
 		    android:summaryOff="@string/pref_vibrate_summary_false"
 		    android:defaultValue="false"/>
 
-		<com.example.aplicativo.components.SeekBarPreference
+		<com.example.aplicativo.components.preference.SeekBarPreference
 			android:key="pref_vibration_duration"
 			android:dependency="pref_vibrate"
 			android:title="@string/pref_vibration_duration_title"
@@ -32,6 +32,7 @@
 			minimum="1"
 			maximum="2000"
 			interval="10"
+			btnInterval="1"
 			monitorBoxEnabled="true"
 			monitorBoxUnit="ms"
 			android:defaultValue="1000"

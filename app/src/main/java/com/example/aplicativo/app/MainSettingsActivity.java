@@ -24,7 +24,7 @@ import java.util.List;
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
-public class SettingsActivity extends PreferenceActivity {
+public class MainSettingsActivity extends PreferenceActivity {
 
 	public static final String CHK_REBOOT_DOWNLOAD = "reboot_download_checkbox";
 	public static final String CHK_USE_LINK = "chk_use_link";

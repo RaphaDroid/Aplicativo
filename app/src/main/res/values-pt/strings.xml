@@ -2,7 +2,13 @@
 <resources>
 
     <!-- Strings de uso geral -->
-    <string name="yes">Sim</string>
+	<string-array name="activities_array">
+		<item>Activity Principal</item>
+		<item>Activity Auxiliar</item>
+		<item>Activity de Arquivos</item>
+	</string-array>
+
+	<string name="yes">Sim</string>
     <string name="no">Não</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancelar</string>
@@ -16,7 +22,8 @@
 	<string name="edit">Editar</string>
 	<string name="options">Opções</string>
 	<string name="confirm">Confirmar</string>
-    
+	<string name="close">Fechar</string>
+
     <!-- MainActivity -->
     <string name="app_name">Teste</string>
     <string name="title_activity_main">Main Activity</string>
@@ -31,14 +38,16 @@
 	<string name="notif_text">Texto da notificação</string>
 	<string name="notification">Notificação</string>
 	<string name="notif_test">Notificação de teste</string>
-    
-    <!-- AuxiliarActivity -->
+	<string name="browse_web">Navegar na Web</string>
+	<string name="share">Compartilhar</string>
+	<string name="battery_info">Informações da bateria</string>
+
+	<!-- AuxiliarActivity -->
     <string name="title_activity_aux">Activity auxiliar</string>
     <string name="pick_contact">Selecionar contato</string>
     <string name="contact_phone">Telefone:</string>
     <string name="share_text">Compartilhar texto</string>
     <string name="shared_text">Texto compartilhado</string>
-	<string name="share">Compartilhar</string>
     <string name="reboot_phone">Reiniciar telefone</string>
     <string name="prompt_reboot_phone">Você deseja reiniciar seu telefone?</string>
     <string name="item_reboot_system">Reiniciar sistema</string>
@@ -69,8 +78,7 @@
     <string name="choose_created_file">Escolher arquivo existente</string>
     <string name="file_successfully_created">Arquivo criado</string>
     <string name="file_error_empty_fields">Há campos vazios!</string>
-
-    
+	<string name="save_to_file">Salvar em um arquivo</string>
     
     <!-- Strings related to Settings -->
     <string name="title_activity_settings">Configurações</string>

@@ -16,14 +16,10 @@ public class DBHelper extends SQLiteOpenHelper{
 	public static final String FIELD_NOME = "nome";
 	//public static final String FIELD_DESCRIPTION = "description";
 
-	SQLiteDatabase db;
-
-	Context context;
 
     @Override
     public void onCreate(SQLiteDatabase db){
 		db.execSQL(CREATE_QUERY);
-	    this.db = this.getWritableDatabase();
     }
 
     @Override
@@ -34,6 +30,5 @@ public class DBHelper extends SQLiteOpenHelper{
 
 	public DBHelper(Context context, String name, int version){
 		super(context, name, null, version);
-		this.context = context;
 	}
 }

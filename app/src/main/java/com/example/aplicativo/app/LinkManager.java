@@ -3,8 +3,39 @@ package com.example.aplicativo.app;
 
 public class LinkManager {
 
+	public static final String linkPattern = new String("^(http|https|ftp)\\://([a-zA-Z0-9\\.\\-]+(\\:[a-zA-Z0-9\\.&amp;%\\$\\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|localhost|([a-zA-Z0-9\\-]+\\.)*[a-zA-Z0-9\\-]+\\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\\:[0-9]+)*(/($|[a-zA-Z0-9\\.\\,\\?\\'\\\\+&amp;%\\$#\\=~_\\-]+))*$");
+
+
+	public static String parseLinks(String s){
+		String[] phrase = s.split("( +|(\n)+)");
+		String htmlText = "";
+
+		for(String word : phrase){
+			htmlText += (isLink(word) ?
+					"\n<a href=\"" + word + "\">" + word + "</a>" : word) + " ";
+		}
+
+		return htmlText.trim();
+	}
+
+	public static boolean isLink(String s){
+		return s.matches(linkPattern);
+	}
+
+	public static boolean verifyHasLink(String s){
+		String[] phrase = s.split("( +|(\n)+)");
+
+		for(String word : phrase){
+			if(isLink(word))
+				return true;
+		}
+
+		return false;
+	}
+
 	public static String fixLink(String wrongLink){
-		
+
+		wrongLink = wrongLink.toLowerCase().trim();
 		String link = "";
 		
 		if(!wrongLink.contains("http://") && !wrongLink.contains("https://"))
@@ -22,7 +53,9 @@ public class LinkManager {
 	}
 	
 	public static String extractSiteName(String link){
-		
+
+		link = link.toLowerCase().trim();
+
 		if(link.contains("http://"))
 			link = link.replace("http://", "");
 		else if(link.contains("https://"))

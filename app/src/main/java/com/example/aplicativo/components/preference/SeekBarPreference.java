@@ -1,4 +1,4 @@
-package com.example.aplicativo.components;
+package com.example.aplicativo.components.preference;
 
 /*
  * Copyright (C) 2013 Peter Gregus for GravityBox Project (C3C076@xda)
@@ -37,6 +37,7 @@ public class SeekBarPreference extends Preference
 	private int mMinimum = 0;
 	private int mMaximum = 100;
 	private int mInterval = 1;
+	private int mBtnInterval = 1;
 	private int mDefaultValue = mMinimum;
 	private boolean mMonitorBoxEnabled = false;
 	private String mMonitorBoxUnit = null;
@@ -67,6 +68,7 @@ public class SeekBarPreference extends Preference
 			mMinimum = attrs.getAttributeIntValue(null, "minimum", 0);
 			mMaximum = attrs.getAttributeIntValue(null, "maximum", 100);
 			mInterval = attrs.getAttributeIntValue(null, "interval", 1);
+			mBtnInterval = attrs.getAttributeIntValue(null, "btnInterval", 1);
 			mDefaultValue = mMinimum;
 			mMonitorBoxEnabled = attrs.getAttributeBooleanValue(null, "monitorBoxEnabled", false);
 			mMonitorBoxUnit = attrs.getAttributeValue(null, "monitorBoxUnit");
@@ -163,10 +165,10 @@ public class SeekBarPreference extends Preference
 		}
 		mHandler.postDelayed(mRapidPressTimeout, RAPID_PRESS_TIMEOUT);
 
-		if (v == mBtnPlus && ((mTmpValue+mInterval) <= mMaximum)) {
-			mTmpValue += mInterval;
-		} else if (v == mBtnMinus && ((mTmpValue-mInterval) >= mMinimum)) {
-			mTmpValue -= mInterval;
+		if (v == mBtnPlus && ((mTmpValue + mBtnInterval) <= mMaximum)) {
+			mTmpValue += mBtnInterval;
+		} else if (v == mBtnMinus && ((mTmpValue - mBtnInterval) >= mMinimum)) {
+			mTmpValue -= mBtnInterval;
 		}
 
 		mBar.setProgress(mTmpValue - mMinimum);

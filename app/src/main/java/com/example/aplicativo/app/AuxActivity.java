@@ -1,23 +1,15 @@
 package com.example.aplicativo.app;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
 import android.text.InputType;
@@ -30,6 +22,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Space;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 public class AuxActivity extends Activity {
@@ -98,7 +96,7 @@ public class AuxActivity extends Activity {
 							            nameText.setSingleLine(true);
 							            nameText.setHint(R.string.item_name);
 							            nameText.setText(itemName[0]);
-							            nameText.setSelected(true);
+							            nameText.setSelection(0, itemName[0].length());
 							            nameText.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
 
 							            editLayout.addView(vSpace1);
@@ -344,6 +342,25 @@ public class AuxActivity extends Activity {
 		return result;
 	}
 
+	private String[] selectBatch(int startIndex){
+		Cursor cursor = db.query(DBHelper.TABLE, new String[]{DBHelper.FIELD_NOME}, DBHelper.FIELD_INDEX + " >= ?",
+				new String[]{String.valueOf(startIndex)}, null, null, null);
+
+		ArrayList<String> result = new ArrayList<String>();
+
+		while(cursor.moveToNext()){
+			result.add(cursor.getString(0));
+		}
+
+		String[] names = new String[result.size()];
+
+		for(int i = 0; i < names.length; i++){
+			names[i] = result.get(i);
+		}
+
+		return names;
+	}
+
 	private void update(String name, int index){
 		ContentValues values = new ContentValues();
 
@@ -384,10 +401,10 @@ public class AuxActivity extends Activity {
 		if(dbEntries.size() != 0)
 			dbEntries.clear();
 
-		for(int i = 2; i <= getGreatesId(); i++){
-			if(selectNameById(i) != null){
-				dbEntries.add(selectNameById(i));
-			}
+		//String[] names = selectBatch(1);
+
+		for(String name : selectBatch(1)){
+			dbEntries.add(name);
 		}
 	}
 
@@ -407,8 +424,11 @@ public class AuxActivity extends Activity {
 
 	private void reloadDB(int startIndex){
 		startIndex++;
+
+		String[] names = selectBatch(startIndex - 1);
+
 		for(int i = startIndex; i < dbEntries.size(); i++){
-			dbEntries.set(i, selectNameByIndex(i + 1));
+			dbEntries.set(i, names[i]);
 		}
 	}
 }
