@@ -29,32 +29,14 @@ public class MainSettingsActivity extends PreferenceActivity {
 	public static final String CHK_REBOOT_DOWNLOAD = "reboot_download_checkbox";
 	public static final String CHK_USE_LINK = "chk_use_link";
 	public static final String LINK = "link";
-	
-	public static final String LIST_APP_FONT = "app_font";
-	
-	public static final int CHARLEE_DOODLES = 1;
-	public static final int ROBOTO_REGULAR = 2;
-	public static final int ROBOTO_ITALIC = 3;
-	public static final int ROBOTO_BLACK = 4;
-	public static final int ROBOTO_BLACK_ITALIC = 5;
-	public static final int ROBOTO_BOLD = 6;
-	public static final int ROBOTO_BOLD_ITALIC = 7;
-	public static final int ROBOTO_CONDENSED = 8;
-	public static final int ROBOTO_CONDENSED_ITALIC = 9;
-	public static final int ROBOTO_BOLD_CONDENSED = 10;
-	public static final int ROBOTO_BOLD_CONDENSED_ITALIC = 11;
-	public static final int ROBOTO_LIGHT = 12;
-	public static final int ROBOTO_LIGHT_ITALIC = 13;
-	public static final int ROBOTO_MEDIUM = 14;
-	public static final int ROBOTO_MEDIUM_ITALIC = 15;
-	public static final int ROBOTO_THIN = 16;
-	public static final int ROBOTO_THIN_ITALIC = 17;
 
 	public static final String CHK_USE_LED = "pref_use_led";
 	public static final String LIST_LED_COLOR = "pref_led_color";
 
 	public static final String CHK_VIBRATE = "pref_vibrate";
 	public static final String VIBRATION_DURATION = "pref_vibration_duration";
+
+	public static final String PREF_ABOUT = "pref_about";
 
 	/**
 	 * Determines whether to always show the simplified settings UI, where
@@ -99,7 +81,6 @@ public class MainSettingsActivity extends PreferenceActivity {
 		// to reflect the new value, per the Android Design
 		// guidelines.
 		bindPreferenceSummaryToValue(findPreference(LINK));
-        bindPreferenceSummaryToValue(findPreference(LIST_APP_FONT));
 		bindPreferenceSummaryToValue(findPreference(LIST_LED_COLOR));
 	}
 
@@ -213,7 +194,6 @@ public class MainSettingsActivity extends PreferenceActivity {
 			// Android Design
 			// guidelines.
 			bindPreferenceSummaryToValue(findPreference(LINK));
-			bindPreferenceSummaryToValue(findPreference(LIST_APP_FONT));
 			bindPreferenceSummaryToValue(findPreference(LIST_LED_COLOR));
 		}
 	}

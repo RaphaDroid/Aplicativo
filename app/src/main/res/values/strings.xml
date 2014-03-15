@@ -115,5 +115,6 @@
     <string name="pref_vibrate_summary_false">Vibration OFF</string>
     <string name="pref_vibration_duration_title">Vibration duration</string>
     <string name="pref_vibration_duration_summary">Set the device vibration period for the notitication</string>
+	<string name="about">About</string>
 
 </resources>

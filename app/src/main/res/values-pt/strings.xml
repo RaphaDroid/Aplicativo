@@ -23,6 +23,7 @@
 	<string name="options">Opções</string>
 	<string name="confirm">Confirmar</string>
 	<string name="close">Fechar</string>
+	<string name="about">Sobre</string>
 
     <!-- MainActivity -->
     <string name="app_name">Teste</string>
@@ -119,4 +120,5 @@
 
 	<string name="pref_vibration_duration_title">Duração da vibração</string>
 	<string name="pref_vibration_duration_summary">Define o tempo em que o dispositivo vibrará</string>
+
 </resources>

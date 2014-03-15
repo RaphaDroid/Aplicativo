@@ -24,12 +24,8 @@
 	                android:data="https://www.google.com.br" />
 	    </Preference>
 
-	    <ListPreference
-	        android:key="app_font"
-	        android:defaultValue="1"
-	        android:title="@string/app_font"
-	        android:entries="@array/font_types_name"
-	        android:entryValues="@array/font_type_values"/>
+	    <com.example.aplicativo.components.preference.AboutPreference/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

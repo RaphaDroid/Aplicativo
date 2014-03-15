@@ -41,13 +41,8 @@ public class DialogManager {
 			dialog.setTitle(title);
 		}
 
-		if(yesListener != null){
-			dialog.setPositiveButton(yesText != null ? yesText : context.getString(R.string.yes), yesListener);
-		}
-
-		if(noListener != null){
-			dialog.setNegativeButton(noText != null ? noText : context.getString(R.string.no), noListener);
-		}
+		dialog.setPositiveButton(yesText != null ? yesText : context.getString(R.string.yes), yesListener);
+		dialog.setNegativeButton(noText != null ? noText : context.getString(R.string.no), noListener);
 
         if(view instanceof String)
             dialog.setMessage((String)view);

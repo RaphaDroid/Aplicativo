@@ -22,23 +22,4 @@ public class Constants {
 	
 	//Links
 	public static String GOOGLE = "https://www.google.com.br";
-	
-	//Fonts
-	public static final String CHARLEE_DOODLES = "CharleeDoodles.ttf";
-	public static final String ROBOTO_REGULAR = "Roboto-Regular.ttf";
-	public static final String ROBOTO_ITALIC = "Roboto-Italic.ttf";
-	public static final String ROBOTO_BLACK = "Roboto-Black.ttf";
-	public static final String ROBOTO_BLACK_ITALIC = "Roboto-BlackItalic.ttf";
-	public static final String ROBOTO_BOLD = "Roboto-Bold.ttf";
-	public static final String ROBOTO_BOLD_ITALIC = "Roboto-BoldItalic.ttf";
-	public static final String ROBOTO_CONDENSED = "Roboto-Condensed.ttf";
-	public static final String ROBOTO_CONDENSED_ITALIC = "Roboto-CondensedItalic.ttf";
-	public static final String ROBOTO_BOLD_CONDENSED = "Roboto-BoldCondensed.ttf";
-	public static final String ROBOTO_BOLD_CONDENSED_ITALIC = "Roboto-BoldCondensedItalic.ttf";
-	public static final String ROBOTO_LIGHT = "Roboto-Light.ttf";
-	public static final String ROBOTO_LIGHT_ITALIC = "Roboto-LightItalic.ttf";
-	public static final String ROBOTO_MEDIUM = "Roboto-Medium.ttf";
-	public static final String ROBOTO_MEDIUM_ITALIC = "Roboto-MediumItalic.ttf";
-	public static final String ROBOTO_THIN = "Roboto-Thin.ttf";
-	public static final String ROBOTO_THIN_ITALIC = "Roboto-ThinItalic.ttf";
 }

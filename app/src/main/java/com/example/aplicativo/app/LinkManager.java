@@ -12,7 +12,7 @@ public class LinkManager {
 
 		for(String word : phrase){
 			htmlText += (isLink(word) ?
-					"\n<a href=\"" + word + "\">" + word + "</a>" : word) + " ";
+					"<br/><a href=\"" + word + "\">" + word + "</a>" : word) + " ";
 		}
 
 		return htmlText.trim();

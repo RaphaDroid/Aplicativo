@@ -1,46 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string-array name="font_types_name">
-        <item>Charlee Doodles</item>
-        <item>Roboto Regular</item>
-        <item>Roboto Italic</item>
-        <item>Roboto Black</item>
-        <item>Roboto Black Italic</item>
-        <item>Roboto Bold</item>
-        <item>Roboto Bold Italic</item>
-        <item>Roboto Condensed</item>
-        <item>Roboto Condensed Italic</item>
-        <item>Roboto Bold Condensed</item>
-        <item>Roboto Bold Condensed Italic</item>
-        <item>Roboto Light</item>
-        <item>Roboto Light Italic</item>
-        <item>Roboto Medium</item>
-        <item>Roboto Medium Italic</item>
-        <item>Roboto Thin</item>
-        <item>Roboto Thin Italic</item>
-    </string-array>
-    
-    <string-array name="font_type_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-    </string-array>
-
 	<string-array name="notif_led_color_values">
 		<item>-16711936</item>
 		<item>-16776961</item>

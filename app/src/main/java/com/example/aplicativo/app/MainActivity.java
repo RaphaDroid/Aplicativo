@@ -48,65 +48,6 @@ public class MainActivity extends Activity {
 			textLink.setMovementMethod(LinkMovementMethod.getInstance());
 		}else
 			textLink.setText(LinkManager.extractSiteName(link));
-
-        //Fonte
-		int fontType = Integer.parseInt(prefs.getString(MainSettingsActivity.LIST_APP_FONT, "1"));
-
-		switch(fontType){
-		case MainSettingsActivity.CHARLEE_DOODLES:
-		    break;
-
-        case MainSettingsActivity.ROBOTO_REGULAR:
-            break;
-
-        case MainSettingsActivity.ROBOTO_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BLACK:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BLACK_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BOLD:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BOLD_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_CONDENSED:
-            break;
-
-        case MainSettingsActivity.ROBOTO_CONDENSED_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BOLD_CONDENSED:
-            break;
-
-        case MainSettingsActivity.ROBOTO_BOLD_CONDENSED_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_LIGHT:
-            break;
-
-        case MainSettingsActivity.ROBOTO_LIGHT_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_MEDIUM:
-            break;
-
-        case MainSettingsActivity.ROBOTO_MEDIUM_ITALIC:
-            break;
-
-        case MainSettingsActivity.ROBOTO_THIN:
-            break;
-
-        case MainSettingsActivity.ROBOTO_THIN_ITALIC:
-            break;
-
-        default:
-            break;
-		}
 	}
 
 	@Override
@@ -167,10 +108,7 @@ public class MainActivity extends Activity {
 					public void onClick(DialogInterface dialog, int which){
 						shareText(shareText.getText().toString());
 					}
-				}, new OnClickListener(){
-					@Override
-					public void onClick(DialogInterface dialog, int which){}
-				}, getString(R.string.share), getString(R.string.cancel));
+				}, null, getString(R.string.share), getString(R.string.cancel));
 	}
 
 	private void shareText(String text){
